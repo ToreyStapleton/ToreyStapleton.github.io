@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<script type="text/javascript">
+$(document).load(function(){
+  $('#intro').hide();
+});
+
+$(document).ready(function(){
+  $('#intro').hide();
+  $('#intro').delay(1000).fadeIn(1500);
+  $('#intro').animate({
+    color: "FFF",
+  }, 1400);
+});
+
+</script>
+
+<body>
+  <h3 class="greeting" id="intro">Torey Stapleton</h3>
+  <%= yield %>
+</body>
+</html>
