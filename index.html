@@ -46,6 +46,153 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
-  </div>
+
+  <div class="section-2">
+    <div id="js-fadeInElement" class="fade-in-element">
+      <h3>Skills</h3>
+      <ul class="bullets">
+        <li class="bullet three-col-bullet" id="bullet-1">
+          <div class="bullet-content">
+            <div class="bullet-img">
+              <img src=https://wac.a8b5.edgecastcdn.net/80A8B5/achievement-images/badges_SimpleFacebook_Stage1.png>
+            </div>
+            <h2>Ruby on Rails</h2>
+            <p>I create quality full-stack apps using Rails, a powerful web framework that includes everything needed to create database-backed web applications.</p>
+          </div>
+        </li>
+        <li class="bullet three-col-bullet" id="bullet-2">
+          <div class="bullet-content">
+            <div class="bullet-img">
+              <img src=https://wac.a8b5.edgecastcdn.net/80A8B5/achievement-images/JS_Objects.png alt="">
+            </div>
+            <h2>JavaScript</h2>
+            <p>I can provide first-class, interactive functions to programs using JavaScript. Essential for web applications and useful in many other environments.</p>
+          </div>
+        </li>
+        <li class="bullet three-col-bullet" id="bullet-3">
+          <div class="bullet-content">
+            <div class="bullet-img">
+              <img src="https://wac.a8b5.edgecastcdn.net/80A8B5/achievement-images/HTML.png">
+            </div>
+            <h2>HTML & CSS</h2>
+            <p>From stylish CSS to library templates such as Bootstrap or Bourbon, I can make your application look clean, beautiful, and slick.</p>
+          </div>
+        </li>
+        <li class="bullet three-col-bullet">
+          <div class="bullet-icon bullet-icon-2" id="bl2">
+            <img src="https://dynamicimagesen-v2b.netdna-ssl.com/product_class_external_product/jquery.png" alt="">
+          </div>
+          <div class="bullet-content">
+            <h2 class="skill-small">jQuery</h2>
+            <p>A popular cross-platform JavaScript library to simplify client-side operations.<p>
+            </div>
+          </li>
+          <li class="bullet three-col-bullet">
+            <div class="bullet-icon bullet-icon-1" id="bl1">
+              <img src="http://defunkt.io/blacktocat.png" alt="">
+            </div>
+            <div class="bullet-content">
+              <h2 class="skill-small">GitHub</h2>
+              <p>Git/GitHub for hosting, sharing, and general source control.<p>
+              </div>
+            </li>
+            <li class="bullet three-col-bullet">
+              <div class="bullet-icon bullet-icon-3" id="bl3">
+                <img src="http://images.clipartpanda.com/question-701-question-mark-design.png" alt="">
+              </div>
+              <div class="bullet-content">
+                <h2 class="skill-small">Coding!</h2>
+                <p>I love to code and I love to learn.  I am always looking for opportunities to expand my skills.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="s2-btns">
+            <div class='scroll-btn pulse' id="btn2">
+              <i class="fa fa-angle-double-down"></i>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          $( "#btn2" ).click(function() {
+            $('html, body').animate({
+              scrollTop: $('.section-3').offset().top - 50
+            }, 750);
+          });
+        </script>
+
+        <div class="section-3">
+          <h3>Some Apps I've Made</h3>
+          <div class="cards">
+            <div class="card">
+              <div class="card-image">
+                <img src="http://s29.postimg.org/8j9nzui53/Screen_Shot_2015_01_07_at_7_31_30_PM.png">
+              </div>
+              <div class="card-header">
+                E-Commerce
+              </div>
+              <div class="card-stats">
+                <div class="modal">
+                  <label for="modal-1">
+                    <div class="modal-trigger">Preview</div>
+                  </label>
+                  <input class="modal-state" id="modal-1" type="checkbox" />
+                  <div class="modal-window">
+                    <div class="modal-inner">
+                      <label class="modal-close" for="modal-1"></label>
+                      <h1>E-Commerce</h1>
+                      <img src="http://s9.postimg.org/czdd0y08f/rsz_screen_shot_2015_01_07_at_82753_pm.png">
+                      <p class="modal-intro">A complete E-Commerce store.  Customers can view products and see the images associated with each size/style, add products to cart, increase/decrease quantities of cart items, pay with credit cards, view order details and previous orders, receive a UPS tracking number with their order.</p>
+                      <p class="modal-content">Technologies Used: Devise, CanCan, Stripe, jQuery, RailsAdmin, Bourbon, Neat, Bitters.</p>
+                      <%= button_to 'View Code on GitHub' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-image">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRh9WpTdnRJAF-nGhBAT7pDnEkvEpTQXb-mIx62JGqcVFPk7ie8yw">
+              </div>
+              <div class="card-header">
+                This Website!
+              </div>
+              <div class="card-copy">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+              </div>
+              <div class="card-stats">
+                <%= button_to 'View on GitHub' %>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-image">
+                <img src="http://rack.1.mshcdn.com/media/ZgkyMDEzLzEwLzI0L2NkL0NvZGluZy41YTU1OS5qcGcKcAl0aHVtYgkxMjAweDYyNyMKZQlqcGc/44ff8ce6/5ea/Coding.jpg">
+              </div>
+              <div class="card-header">
+                App Three
+              </div>
+              <div class="card-copy">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+              </div>
+              <div class="card-stats">
+                <%= button_to 'View on GitHub' %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="footer-info">
+            <ul>
+              <li><h2>Contact Me</h2></li>
+              <li>Cell: <a href="javascript:void(0)">(513)505-3121</a></li>
+              <li>Email: <a href="javascript:void(0)">Torey.Stapleton@yahoo.com</a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
 </body>
 </html>
