@@ -3,6 +3,7 @@
 <head>
   <title>Torey Stapleton</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script type="text/javascript" src="jquery.js"></script>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
@@ -18,11 +19,33 @@ $(document).ready(function(){
   $('#intro').animate({
     color: "FFF",
   }, 1400);
+  $('#page_effect').delay(2500).fadeIn(1500);
 });
 
 </script>
 
 <body>
   <h3 class="greeting" id="intro">Torey Stapleton</h3>
+
+  <div id="page_effect" style="display:none;">
+    <div class="section-1">
+      <img src=http://s7.postimg.org/5kygncw3f/good1.jpg>
+      <div class="myinfo">
+        <div class="infoquotes">
+          <div id="quote1">
+            <span class="quote">Software Developer</span>
+          </div>
+          <div id="quote2">
+            Ruby on Rails
+          </div>
+        </div>
+      </div>
+      <div class="s1-btns">
+        <div class='scroll-btn pulse' id="btn1">
+          <i class="fa fa-angle-double-down"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
