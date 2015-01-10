@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+  <title>Torey Stapleton</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -17,7 +14,6 @@ $(document).load(function(){
 });
 
 $(document).ready(function(){
-  $('#intro').hide();
   $('#intro').delay(1000).fadeIn(1500);
   $('#intro').animate({
     color: "FFF",
@@ -28,6 +24,5 @@ $(document).ready(function(){
 
 <body>
   <h3 class="greeting" id="intro">Torey Stapleton</h3>
-  <%= yield %>
 </body>
 </html>
