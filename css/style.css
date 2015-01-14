@@ -735,6 +735,10 @@
 			padding: 4em 0 0 0;
 		}
 
+		#header #goleft {
+			right: 30%;
+		}
+
 		#header h1
 		{
 			color: #fff;
