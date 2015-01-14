@@ -189,6 +189,10 @@
 			margin-bottom: 3em;
 		}
 
+		article.special p {
+			text-align: center;
+		}
+
 			section > :last-child,
 			article > :last-child
 			{
