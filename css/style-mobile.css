@@ -1,5 +1,5 @@
 /*
-	Strongly Typed by HTML5 UP
+	Helios by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -10,206 +10,230 @@
 
 	body,input,textarea,select
 	{
-		line-height: 1.75em;
-		font-size: 11pt;
-		letter-spacing: 0;
+		font-size: 12.5pt;
+		line-height: 1.5em;
 	}
 
-	body
+	h2
 	{
+		font-size: 1.75em;
 	}
-
-	h2, h3, h4, h5, h6
-	{
-		font-size: 1.2em;
-		letter-spacing: 2px;
-		text-align: center;
-		margin: 0 0 1.5em 0;
-	}
-
-	h2 br, h3 br, h4 br, h5 br, h6 br
-	{
-		display: none;
-	}
-
-	/* Sections/Article */
 	
+	h3
+	{
+		font-size: 1.25em;
+	}
+	
+	hr
+	{
+		top: 3em;
+		margin-bottom: 6em;
+	}
+
+	/* Section/Article */
+
 		section,
-		article
+		article,
+		.row > section,
+		.row > article
 		{
-			clear: both;
-			margin: 2em 0 2em 0 !important;
+			margin-bottom: 2em;
 		}
-
-			section > :first-child,
-			article > :first-child
+		
+			section:last-child,
+			article:last-child
 			{
-				margin-top: 0 !important;
+				margin-bottom: 0;
 			}
 
-			section:first-child,
-			article:first-child
+			header
 			{
-				margin-top: 0 !important;
 			}
+
+				header > p
+				{
+					font-size: 1.25em;
+				}
 
 	/* Image */
 
 		.image
 		{
 		}
-			
-			.image.left
-			{
-				width: 40%;
-			}
-			
+
 			.image.featured
 			{
 				margin: 0 0 2em 0;
 			}
+			
+			.image.left
+			{
+				margin: 0 1em 1em 0;
+			}
+			
+			.image.centered
+			{
+				margin: 0 0 1em 0;
+			}
+
+	/* List */
+
+		ul
+		{
+		}
+
+			ul.actions
+			{
+			}
+			
+				form ul.actions
+				{
+					margin-top: 0;
+				}
+			
+				ul.actions li
+				{
+					display: block;
+					margin: 0.75em 0 0 0;
+				}
+				
+				ul.actions li:first-child
+				{
+					margin-top: 0;
+				}
+				
+			ul.menu
+			{
+				height: auto;
+				text-align: center;
+			}
+			
+				ul.menu li
+				{
+					display: block;
+					border: 0;
+					padding: 0.75em 0 0 0;
+					margin: 0;
+				}
+				
+				ul.menu li:first-child
+				{
+					padding-top: 0;
+				}
+
+			ul.icons
+			{
+				font-size: 1em;
+				padding: 0.35em 0.5em 0.35em 0.5em;
+			}
+
+				ul.icons li
+				{
+				}
+
+					ul.icons li a
+					{
+						width: 2.25em;
+					}
 
 	/* Button */
-		
+
 		input[type="button"],
 		input[type="submit"],
 		input[type="reset"],
 		.button
 		{
-			letter-spacing: 2px;
 			display: block;
-			padding: 1em 0 1em 0;
+			padding: 0;
+			line-height: 3em;
+			width: 100%;
 		}
-
-	/* List */
-
-		ul.links
-		{
-		}
-
-			ul.links li
-			{
-				display: block;
-				border: 0;
-				padding: 0.25em 0 0 0;
-				margin: 0;
-			}
-
-		ul.divided
-		{
-		}
-
-			ul.divided li
-			{
-				margin: 2.75em 0 0 0;
-				padding: 2.75em 0 0 0;
-			}
-
-		ul.icons
-		{
-			padding: 0 !important;
-			margin: 0 0 0.5em 0 !important;
-		}
-
-	/* Box */
-
-		.box
-		{
-		}
-		
-			.box.excerpt
-			{
-			}
-			
-				.box-excerpt .date
-				{
-					display: block;
-					letter-spacing: 2px;
-					padding: 0.25em 1em 0.25em 1em;
-					margin: 0 auto 2.5em auto;
-					text-align: center;
-				}
 
 /*********************************************************************************/
 /* UI                                                                            */
 /*********************************************************************************/
 
-	#titleBar
+	#navButton
 	{
 	}
 
-		#titleBar .toggle
+		#navButton .toggle
 		{
 			position: absolute;
 			left: 0;
 			top: 0;
-			width: 80px;
-			height: 60px;
+			width: 100%;
+			height: 100%;
 		}
-
-			#titleBar .toggle:before
+		
+			#navButton .toggle:before
 			{
-				display: inline-block;
 				font-family: FontAwesome;
 				text-decoration: none;
 				font-style: normal;
 				font-weight: normal;
 				-webkit-font-smoothing:antialiased;
 				-moz-osx-font-smoothing:grayscale;
-				
-				content: '\f0c9';
-				display: block;
-				width: 60px;
-				height: 40px;
-				background: rgba(232,232,232,0.9);
-				border-radius: 4px;
-				position: absolute;
-				left: 5px;
-				top: 5px;
-				box-shadow: 0.125em 0.125em 0 0 rgba(0,0,0,0.15);
-				text-align: center;
-				line-height: 40px;
-				font-size: 18px;
-				color: #aaa;
-			}
 
-			#titleBar .toggle:active:before
-			{
-				opacity: 0.5;
+				content: '\f0c9';
+				color: #fff;
+				color: rgba(255,255,255,0.75);
+				text-align: center;
+				display: block;
+				font-size: 14px;
+				width: 80px;
+				height: 30px;
+				line-height: 30px;
+				position: absolute;
+				left: 50%;
+				margin-left: -40px;
+				background: rgba(132,128,136,0.75);
+				border-top: 0;
+				border-radius: 0 0 0.35em 0.35em;
 			}
 
 	#navPanel
 	{
-		background: #444;
-		border-right: solid 2px #3c3c3c;
-		font-weight: 400;
-		text-transform: uppercase;
-		color: #888;
-		letter-spacing: 2px;
-		font-size: 0.85em;
+		position: relative;
+		background: #1f1920;
+		box-shadow: inset 0px -2px 5px 0px rgba(0,0,0,0.25);
+		font-size: 1em;
 	}
+
+		#navPanel:before
+		{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: url('images/overlay.png');
+			background-size: 128px 128px;
+		}
 
 		#navPanel .link
 		{
+			position: relative;
+			z-index: 1;
 			display: block;
-			color: #ddd;
 			text-decoration: none;
-			height: 44px;
-			line-height: 44px;
+			padding: 0.5em;
+			color: #ddd;
 			border: 0;
-			border-top: solid 1px #3c3c3c;
-			padding: 0 1em 0 1em;
+			border-top: dotted 1px rgba(255,255,255,0.05);
 		}
 		
 			#navPanel .link:first-child
 			{
 				border-top: 0;
 			}
-			
+		
 			#navPanel .link.depth-0
 			{
-				font-weight: 600;
 				color: #fff;
+				font-weight: 600;
 			}
 
 			#navPanel .indent-1 { display: inline-block; width: 1em; }
@@ -220,32 +244,12 @@
 			#navPanel .depth-0 { color: #fff; }
 
 /*********************************************************************************/
-/* Wrappers                                                                      */
+/* Wrapper                                                                       */
 /*********************************************************************************/
 
-	#header-wrapper
+	.wrapper
 	{
-		padding: 0 20px 0 20px;
-	}
-
-	#features-wrapper
-	{
-		padding: 3em 20px 3em 20px;
-	}
-	
-	#banner-wrapper
-	{
-		padding: 2em 0 2em 0;
-	}
-	
-	#main-wrapper
-	{
-		padding: 3em 20px 3em 20px;
-	}
-	
-	#footer-wrapper
-	{
-		padding: 4em 20px 3em 20px;
+		padding: 3em 1em 3em 1em;
 	}
 
 /*********************************************************************************/
@@ -254,20 +258,36 @@
 
 	#header
 	{
-		padding: 6em 0 4em 0;
+		padding-bottom: 0;
+		background-attachment: scroll;
 	}
-	
+
+		#header .inner
+		{
+			padding-top: 1.5em;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+
 		#header h1
 		{
-			font-size: 2em;
-			letter-spacing: 8px;
-			line-height: 1.25em;
+			font-size: 2.5em;
 		}
 		
-		#header p
+			.homepage #header h1
+			{
+				font-size: 2.5em;
+			}
+		
+		#header header > p
 		{
-			margin: 1.25em 0 0 0;
-			letter-spacing: 2px;
+			font-size: 1em;
+		}
+
+		#header hr
+		{
+			top: 1em;
+			margin-bottom: 2.5em;
 		}
 
 /*********************************************************************************/
@@ -282,71 +302,36 @@
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
-	
+
 	#banner
 	{
-		padding: 5em 20px 5em 20px;
-		margin: 0 !important;
-	}	
-
-		#banner p
-		{
-			font-size: 1.75em;
-			line-height: 1.25em;
-			letter-spacing: 3px;
-		}
-		
-			#banner p br
-			{
-				display: none;
-			}
-	
-/*********************************************************************************/
-/* Content                                                                       */
-/*********************************************************************************/
-	
-	#content
-	{
+		padding: 3em 2em 3em 2em;
 	}
 
-		#content > section,
-		#content > article
-		{
-			margin: 4em 0 0 0 !important;
-			padding: 4em 0 0 0 !important;
-		}
-		
-		#content > section:first-child,
-		#content > article:first-child
-		{
-			margin: 0 !important;
-			padding: 0 !important;
-		}
-	
 /*********************************************************************************/
 /* Sidebar                                                                       */
 /*********************************************************************************/
-	
+
 	#sidebar
 	{
-		border-top: solid 2px #e5e5e5;
-		box-shadow: inset 0px 8px 0px 0px #fff, inset 0px 10px 0px 0px #e5e5e5;
-		margin-top: 4em !important;
-		padding-top: 4em !important;
 	}
-
-		#sidebar > section,
-		#sidebar > article
+	
+		#sidebar > hr:first-of-type
 		{
-			margin: 4em 0 0 0 !important;
-			padding: 4em 0 0 0 !important;
+			display: block;
 		}
-		
-		#sidebar > section:first-child,
-		#sidebar > article:first-child
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+	#main
+	{
+	}
+	
+		#main > header
 		{
-			margin: 0 !important;
-			padding: 0 !important;
+			text-align: center;
 		}
 
 /*********************************************************************************/
@@ -355,24 +340,32 @@
 
 	#footer
 	{
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 	
-		#footer .icons
-		{
-			margin: 0 0 2em 0 !important;
-		}
-		
-		#footer .icons:last-child
-		{
-			margin-bottom: 0;
-		}
-
 /*********************************************************************************/
-/* Copyright                                                                     */
+/* Carousel                                                                      */
 /*********************************************************************************/
 
-	#copyright
+	.carousel
 	{
-		margin-top: 2em;
-		padding-top: 2em;
+		padding: 0.5em 0 0.5em 0;
 	}
+
+		.carousel .reel
+		{
+			padding: 0 0.5em 0 0.5em;
+		}
+	
+		.carousel article
+		{
+			width: 14em;
+			padding-bottom: 2em;
+			margin: 0 0.5em 0 0;
+		}
+
+			.carousel article .image
+			{
+				margin-bottom: 2em;
+			}
