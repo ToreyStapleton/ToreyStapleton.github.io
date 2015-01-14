@@ -229,6 +229,10 @@
 				text-align: inherit;
 			}
 
+			h2.myapps {
+				text-align: center;
+			}
+
 		footer
 		{
 			margin: 2.5em 0 0 0;
@@ -263,6 +267,12 @@
 				display: block;
 				width: 100%;
 				margin: 0 0 4em 0;
+			}
+
+			.image.featured img {
+				height: 200px;
+				width: 200px;
+				margin: auto;
 			}
 
 			.image.left
