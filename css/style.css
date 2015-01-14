@@ -733,10 +733,8 @@
 			z-index: 1;
 			margin: 0;
 			padding: 4em 0 0 0;
-		}
-
-		#header #goleft {
-			right: 30%;
+			text-align: left;
+			top: -10em;
 		}
 
 		#header h1
