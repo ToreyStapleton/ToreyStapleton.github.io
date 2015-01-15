@@ -279,6 +279,21 @@
 				margin: auto;
 			}
 
+			#app1 img {
+				width: 275px;
+				height: 300px;
+			}
+
+			#app2 img {
+				width: 275px;
+				height: 300px;
+			}
+
+			#app3 img {
+				width: 275px;
+				height: 300px;
+			}
+
 			.image.left
 			{
 				float: left;
