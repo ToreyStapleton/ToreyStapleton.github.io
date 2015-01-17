@@ -40,6 +40,20 @@
 		font-weight: 300;
 	}
 
+	button.summarybtns {
+		color: white;
+		background-color: #4285F4;
+		border: none;
+		font-size: 20px;
+		padding: 5px 10px 5px 10px;
+		margin-bottom: 5px;
+	}
+
+	button.summarybtns:hover {
+		color: black;
+		background-color: yellow;
+	}
+
 	h1,h2,h3,h4,h5,h6
 	{
 		font-weight: 400;
