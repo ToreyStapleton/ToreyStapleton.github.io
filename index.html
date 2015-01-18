@@ -23,6 +23,25 @@
 	</head>
 	<body class="homepage">
 
+		<div class="load_effect">
+			<div class="load_animation">
+				<div id="block_1" class="barlittle"></div>
+				<div id="block_2" class="barlittle"></div>
+				<div id="block_3" class="barlittle"></div>
+				<div id="block_4" class="barlittle"></div>
+				<div id="block_5" class="barlittle"></div>
+			</div>
+		</div>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#page_effect').delay(2000).fadeIn(1000);
+		$('.load_effect').delay(2000).fadeOut(1000);
+	});
+	</script>
+
+		<div id="page_effect" style="display:none">
+
 		<!-- Header -->
 			<div id="header">
 
@@ -282,6 +301,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 
 	</body>
 </html>
