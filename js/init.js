@@ -4,6 +4,23 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+$(document).ready(function() {
+
+  var loopText = function() {
+    $(".cls1").fadeOut(1300, function() {
+      $(".cls2").fadeIn(1300, function() {
+        $(".cls2").fadeOut(1300, function() {
+          $(".cls1").fadeIn(1300, function() {
+            return loopText();
+          });
+        });
+      });
+    });
+  }
+
+  loopText();
+});
+
 (function($) {
 
 	var settings = {
