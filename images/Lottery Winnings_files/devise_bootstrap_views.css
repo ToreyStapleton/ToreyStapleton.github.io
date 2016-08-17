@@ -1,0 +1,13 @@
+/* line 1, /Users/Torey/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-bootstrap-views-0.0.8/app/assets/stylesheets/devise_bootstrap_views.scss */
+.float-none {
+  float: none;
+}
+
+/* line 5, /Users/Torey/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-bootstrap-views-0.0.8/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading {
+  padding: 15px;
+}
+/* line 7, /Users/Torey/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-bootstrap-views-0.0.8/app/assets/stylesheets/devise_bootstrap_views.scss */
+.panel-heading h4 {
+  margin: 0px;
+}
