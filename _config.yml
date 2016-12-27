@@ -23,12 +23,13 @@ url: "http://toreystapleton.github.io/" # the base hostname & protocol for your 
 github_username:  ToreyStapleton
 
 collections:
-  - my_collection
+  my_collection:
+    output: true
+    permalink: /blog/:path
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-slate
-
+theme: jekyll-theme-architect
 gems:
   - jekyll-feed
 exclude:

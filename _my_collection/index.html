@@ -2,8 +2,9 @@
 layout: post
 title:  "Change Title!"
 date:   2016-12-27 11:32:30 -0500
-
 categories: jekyll update
 permalink: /blog/index
 ---
-Hello
+{% for post in site.posts %}
+<a href="{{ post.url }}">{{ post.title }}</a>
+{% endfor %}
