@@ -28,16 +28,23 @@ dl, dd, ol, ul, figure {
   float: right;
   color: white;
   height: 50px;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .navRight a {
   text-decoration: none;
   color: white;
+  margin-top: 10px;
 }
 
 .navRight a:visited {
   text-decoration: none;
   color: white;
+}
+
+.navRight a:hover {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -46,7 +53,7 @@ dl, dd, ol, ul, figure {
 
 
 .post-container {
-  padding: 35px;
+  padding: 15px 35px 55px 35px;
   height: 120%;
   margin: 20px 0px 20px 0px;
 }
@@ -75,6 +82,14 @@ dl, dd, ol, ul, figure {
 
 a.myButton {
   float: right;
+  text-decoration: none;
+  padding: 10px;
+  border: 2px solid;
+}
+
+a.myButton:hover {
+  background-color: #1756a9;
+  color: white;
   text-decoration: none;
 }
 
