@@ -28,14 +28,13 @@ dl, dd, ol, ul, figure {
   float: right;
   color: white;
   height: 50px;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-right: 20px;
 }
 
 .navRight a {
   text-decoration: none;
   color: white;
-  margin-top: 10px;
 }
 
 .navRight a:visited {
@@ -84,7 +83,8 @@ a.myButton {
   float: right;
   text-decoration: none;
   padding: 10px;
-  border: 2px solid;
+  border: 1px solid;
+  border-radius: 0.5em;
 }
 
 a.myButton:hover {
