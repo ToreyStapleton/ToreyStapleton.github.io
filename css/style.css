@@ -18,6 +18,16 @@
 		color: #5b5b5b;
 	}
 
+	.blogButton {
+		color: pink;
+		background-color: pink;
+	}
+
+	.blogBtnFooter {
+		position: absolute;
+		top: -200px;
+	}
+
 		body.is-loading *
 		{
 			-moz-transition: none !important;

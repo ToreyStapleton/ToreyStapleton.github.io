@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "First"
+date:   2016-12-15 11:32:30 -0500
+categories: jekyll update
+abstract: 'Ok lets just see'
+permalink: /blog/learning
+---
+I write stuff here
