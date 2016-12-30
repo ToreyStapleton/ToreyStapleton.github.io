@@ -2,7 +2,7 @@
 layout: post
 title:  Protractor Control Flow
 date:   2016-12-28
-abstract: Manipulating the control flow through the use of implicit waits
+abstract: Improving test consistency and run time by manipulating the control flow with implicit waits
 categories: protractor javascript
 permalink: /blog/protractor/elements
 ---
@@ -37,7 +37,7 @@ One of the main advantages of testing Angular apps is that Protractor has the ab
 
 
 <h3>Explicit vs Implicit Waits</h3>
-The proper way to manipulate the control flow is through implicit waits.  An **implicit wait** is simply a way of blocking test flow until a condition is met.  An **explicit wait** blocks test execution for a fixed amount of time, not based on any condition.  Explicit waits in Protractor are invoked via `browser.sleep()`.  *In general, explicit waits are not a good testing practice and unfortunately I see people use them frequently.*  The most common reason I hear people say they used an explicit wait is because they are either getting `StaleElementReference` or `NoSuchElement` errors.  For example, when trying to test a recently created object, you may get an error if the test executes before the app has finished updating:
+The proper way to manipulate the control flow is through implicit waits.  An **implicit wait** is simply a way of blocking test flow until a condition is met.  An **explicit wait** blocks test execution for a fixed amount of time, not based on any condition.  *In general, explicit waits are not a good testing practice and unfortunately I see people use them frequently.*  Explicit waits in Protractor are invoked via `browser.sleep()`.  The most common reason I hear people say they used an explicit wait is because they are either getting `StaleElementReference` or `NoSuchElement` errors.  For example, when trying to test a recently created object, you may get an error if the test executes before the app has finished updating:
 {% highlight javascript %}
 $('button.createPost').click(); // creates a new post
 // server takes longer to respond than usual
@@ -46,7 +46,7 @@ $('.newPostTitle').getText().then(function(text) {
 });
 {% endhighlight %}
 
-The **explicit wait** solution to that would be to insert a `browser.sleep(5000)` (time in milliseconds) between the `click()` and `getText()` events.  The downside to this is that now the test will *always* wait 5 seconds before accessing the new post, regardless of how long it took the post to create and show on the UI.  While this solution works in most cases, it is not a good practice and as your run time will drastically increase as you continue adding more tests.  The **implicit wait** is a much more efficient and flexible solution:
+The **explicit wait** solution to that would be to insert a `browser.sleep(5000)` (time in milliseconds) between the `click()` and `getText()` events.  The downside to this is that now the test will *always* wait 5 seconds before accessing the new post, regardless of how long it took the post to create and update on the UI.  While this solution works in most cases, it is not a good practice as your run time will drastically increase as you continue adding more tests.  The **implicit wait** is a much more efficient and flexible solution:
 
 {% highlight javascript %}
 $('button.createPost').click(); // creates a new post
@@ -57,4 +57,22 @@ $('.newPostTitle').getText().then(function(text) {
 });
 {% endhighlight %}
 
-With the **implicit wait** the test waits until the promise `presenceOf()` returns `true`, which only occurs when the DOM is updated with that element.  The only error outcome you could encounter is if the test exceeds the timeout limit specified in your config file.  The <a href="http://www.protractortest.org/#/api?view=ProtractorExpectedConditions">Expected Condition</a>
+The function `browser.wait()` pauses the test until the given promise `presenceOf()` returns `true`, which only occurs when the DOM is updated with that element.  The only error outcome you could encounter is if the test exceeds the timeout limit specified in your config file.  This is an example of Protractor's <a href="http://www.protractortest.org/#/api?view=ProtractorExpectedConditions">Expected Conditions</a>.  I find `presenceOf()` and its counterpart `stalenessOf()` to be the most common ones, some other useful ones are `elementToBeClickable()` and `textToBePresentInElement`.  You can also combine these conditions together with `and`, `or`, and/or `not`.  These are much more flexible than the **explicit wait** because it reduces the chance of encountering random errors and it will halt test execution for the exact time needed, whether that is 0.1 seconds or 10 seconds (which also makes the test more stable).
+
+You can get creative with `browser.wait()` and create your own Expected Conditions by using some other Protractor functions.  For example, to wait for an attribute to be added to an element:
+
+{% highlight javascript %}
+function waitForAttributePresent(el, attr, attrValue, time) {
+  var timeout = time || 0;
+  return browser.wait(function() {
+    return el.getAttribute(attr).then(function(val) {
+      return ~val.indexOf(attrValue) < 0;
+    });
+  });
+};
+// example: wait for an elements class to contain 'ng-hide'
+var myPost = $('div.post');
+waitForAttributePresent(myPost, 'class', 'ng-hide', 5000);
+{% endhighlight %}
+
+Properly using **implicit waits** should effectively improve your test consistency and run time.  Learning them will make your life much easier.
