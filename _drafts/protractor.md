@@ -45,4 +45,13 @@ $('.newPostTitle').getText().then(function(text) {
 });
 {% endhighlight %}
 
-The **explicit wait** solution to that would be to insert a `browser.sleep(5000)` (time in milliseconds) between the `click()` and `getText()` events.  The downside to this is that now the test will *always* wait 5 seconds before accessing the new post, regardless of how long it took the post to create and show on the UI.  While this solution works in most cases, it is not a good practice and as your run time will drastically increase as you continue adding more tests.  The **implicit wait** is a much more efficient and flexible solution.
+The **explicit wait** solution to that would be to insert a `browser.sleep(5000)` (time in milliseconds) between the `click()` and `getText()` events.  The downside to this is that now the test will *always* wait 5 seconds before accessing the new post, regardless of how long it took the post to create and show on the UI.  While this solution works in most cases, it is not a good practice and as your run time will drastically increase as you continue adding more tests.  The **implicit wait** is a much more efficient and flexible solution:
+
+{% highlight javascript %}
+$('button.createPost').click(); // creates a new post
+// wait for that item to be added to the DOM
+browser.wait(EC.presenceOf($('.newPostTitle')));
+$('.newPostTitle').getText().then(function(text) {
+  console.log(text); // error NoSuchElement
+});
+{% endhighlight %}
