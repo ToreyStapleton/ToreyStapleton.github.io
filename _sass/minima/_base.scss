@@ -15,35 +15,41 @@ dl, dd, ol, ul, figure {
   width: 100%;
 }
 
-.navLeft {
+.header-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.header-container li {
+  display: inline;
+  padding: 12px;
+}
+
+.header-container li a {
+  color: white;
+}
+
+.header-container li a:hover {
+  text-decoration: none;
+}
+
+.header-container li.navLeft {
   float: left;
-  color: white;
-  height: 50px;
-  margin-left: 20px;
-  margin-top: 5px;
-  font-size: 1.5em;
+  padding-right: 0;
 }
 
-.navRight {
+.header-container li.navCenter {
+  padding-right: 0;
+}
+
+.header-container li.navRight {
+  padding-left: 0;
+}
+
+.header-container li:not(.navLeft) {
   float: right;
-  color: white;
-  height: 50px;
-  margin-top: 12px;
-  margin-right: 20px;
-}
-
-.navRight a {
-  text-decoration: none;
-  color: white;
-}
-
-.navRight a:visited {
-  text-decoration: none;
-  color: white;
-}
-
-.navRight a:hover {
-  text-decoration: none;
 }
 
 .wrapper {
