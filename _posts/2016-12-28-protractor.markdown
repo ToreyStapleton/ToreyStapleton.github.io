@@ -70,7 +70,11 @@ function waitForAttributePresent(el, attr, attrValue, time) {
     });
   });
 };
-// example: wait for an elements class to contain 'ng-hide'
+{% endhighlight %}
+
+Example usage:
+{% highlight javascript %}
+// wait for an elements class to contain 'ng-hide'
 var myPost = $('div.post');
 waitForAttributePresent(myPost, 'class', 'ng-hide', 5000);
 {% endhighlight %}
