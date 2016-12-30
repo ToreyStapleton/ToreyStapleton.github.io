@@ -2,11 +2,11 @@
 layout: post
 title:  Protractor Control Flow
 date:   2016-12-28
-abstract: Since this is my first blog post ever, I wanted to write about something familiar - improving e2e test consistency by manipulating the control flow
+abstract: Since this is my first blog post ever, I wanted to write about something familiar - testing with Protractor, and managing the control flow
 categories: protractor javascript
 permalink: /blog/protractor-implicit-waits
 ---
-Recently, end-to-end testing has been gaining popularity as a valid way of testing.  At my last two jobs, our tool of choice was <a href="http://www.protractortest.org/#/" target="blank_">Protractor</a>, an open source E2E framework wrapped around Selenium Webdriver.  Protractor is managed by a team at Google, so naturally it works well with apps made in AngularJS.  Don't worry if your app isn't made with Angular, with a few tweaks Protractor can also be made to work with non-Angular apps.
+Recently, end-to-end testing has been gaining popularity as a valid way of testing.  At my current job, our tool of choice is <a href="http://www.protractortest.org/#/" target="blank_">Protractor</a>, an open source E2E framework wrapped around Selenium Webdriver.  Protractor is managed by a team at Google, so naturally it works well with apps made in AngularJS.  Don't worry if your app isn't made with Angular, with just a few tweaks Protractor can also be made to work with non-Angular apps.
 
 Protractor is asynchronous in nature, all functions return a `promise`.  Protractor uses a `control flow` to maintain a queue of pending promises that keeps webdriver actions and test execution organized.  It allows us to write code like this:
 
