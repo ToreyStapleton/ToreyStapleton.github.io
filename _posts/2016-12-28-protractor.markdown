@@ -2,7 +2,7 @@
 layout: post
 title:  Protractor Control Flow
 date:   2016-12-28
-abstract: Since this is my first blog post ever and it feels a little awkward, I wanted to write about a familiar subject: improving test consistency with implicit waits
+abstract: Since this is my first blog post ever and it feels a little awkward, I wanted to write about a familiar subject - improving test consistency with implicit waits
 categories: protractor javascript
 permalink: /blog/protractor-implicit-waits
 ---
