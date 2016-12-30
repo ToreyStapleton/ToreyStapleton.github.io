@@ -68,7 +68,7 @@ function waitForAttributePresent(el, attr, attrValue, time) {
     return el.getAttribute(attr).then(function(val) {
       return ~val.indexOf(attrValue) < 0;
     });
-  });
+  }, timeout);
 };
 {% endhighlight %}
 
