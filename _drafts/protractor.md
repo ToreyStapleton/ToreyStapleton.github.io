@@ -37,11 +37,12 @@ One of the main advantages of testing Angular apps is that Protractor has the ab
 
 
 <h3>Explicit vs Implicit Waits</h3>
-The proper way to manipulate the control flow is through implicit waits.  An **implicit wait** is simply a way of blocking test flow until a condition is met.  An **explicit wait** blocks test execution for a fixed amount of time, not based on any condition.  Explicit waits in Protractor are invoked via `browser.sleep()`.  *In general, explicit waits are not a good testing practice and unfortunately I see people use them frequently.*  The most common reason I hear people say they used an explicit wait is because they are either getting `StaleElementReference` or `NoSuchElement` errors.  For example, when trying to test a recently created object:
+The proper way to manipulate the control flow is through implicit waits.  An **implicit wait** is simply a way of blocking test flow until a condition is met.  An **explicit wait** blocks test execution for a fixed amount of time, not based on any condition.  Explicit waits in Protractor are invoked via `browser.sleep()`.  *In general, explicit waits are not a good testing practice and unfortunately I see people use them frequently.*  The most common reason I hear people say they used an explicit wait is because they are either getting `StaleElementReference` or `NoSuchElement` errors.  For example, when trying to test a recently created object, you may get an error if the test executes before the app has finished updating:
 {% highlight javascript %}
 $('button.createPost').click(); // creates a new post
+// server takes longer to respond than usual
 $('.newPostTitle').getText().then(function(text) {
-  console.log(text); // error NoSuchElement
+  console.log(text); // could get error NoSuchElement
 });
 {% endhighlight %}
 
@@ -52,6 +53,8 @@ $('button.createPost').click(); // creates a new post
 // wait for that item to be added to the DOM
 browser.wait(EC.presenceOf($('.newPostTitle')));
 $('.newPostTitle').getText().then(function(text) {
-  console.log(text); // error NoSuchElement
+  console.log(text);
 });
 {% endhighlight %}
+
+With the **implicit wait** the test waits until the promise `presenceOf()` returns `true`, which only occurs when the DOM is updated with that element.  The only error outcome you could encounter is if the test exceeds the timeout limit specified in your config file.  The <a href="http://www.protractortest.org/#/api?view=ProtractorExpectedConditions">Expected Condition</a>
