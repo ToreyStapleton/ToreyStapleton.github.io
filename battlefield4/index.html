@@ -23,12 +23,26 @@
 <script>
 
 window.onload = function () {
-  getData();
+  xmlData();
 };
 
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
-
 const onlinePlayers = [];
+
+var oReq;
+
+function xmlData() {
+  oReq = new XMLHttpRequest();
+  oReq.onreadystatechange = logContents;
+  oReq.open('GET', endpoint);
+  oReq.responseType = "text"
+  oReq.send();
+};
+
+function logContents() {
+  oReq = JSON.parse(oReq.response);
+  return getPlatformInfo();
+};
 
 function getData() {
   fetch(endpoint).then(function (data) {
@@ -41,11 +55,10 @@ function getData() {
 
 
 function getPlatformInfo() {
-  onlinePlayers.map(function (platform) {
-    for(var key in platform) {
-      showPlatform(platform[key].count, platform[key].label, platform[key].peak24)
+    for(var key in oReq) {
+      console.log(oReq[key])
+      showPlatform(oReq[key].count, oReq[key].label, oReq[key].peak24)
     }
-  });
 };
 
 var container = document.querySelector('.container');
