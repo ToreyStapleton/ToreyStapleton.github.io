@@ -4,6 +4,8 @@ html {
   font-family:'helvetica neue';
   display: block;
   height: 100%;
+  width: 100%;
+  position: fixed;
 }
 *, *:before, *:after {
   box-sizing: inherit;
