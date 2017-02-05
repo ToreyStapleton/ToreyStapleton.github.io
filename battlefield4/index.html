@@ -52,7 +52,7 @@ function logContents() {
 
 function getPlatformInfo() {
     for(var key in oReq) {
-      console.log(oReq[key])
+      // console.log(oReq[key])
       showPlatform(oReq[key].count, oReq[key].label, oReq[key].peak24)
     }
 };
@@ -73,13 +73,15 @@ function showPlatform(count, label, peak24) {
 }
 
 function checkSize() {
-  var person = document.querySelector('.person');
-  if(window.innerWidth < 500 && person.childElementCount == 0) {
-    person.innerHTML = "<img src='person.png'>";
-  }
-  else if(window.innerWidth > 500 && person.childElementCount > 0) {
-    person.innerHTML = "Players Online: ";
-  }
+  var person = document.querySelectorAll('.person');
+  person.forEach(function (elem) {
+    if(window.innerWidth < 500 && elem.childElementCount == 0) {
+      elem.innerHTML = "<img src='person.png'>";
+    }
+    else if(window.innerWidth > 500 && elem.childElementCount > 0) {
+      elem.innerHTML = "Players Online: ";
+    }
+  });
 };
 
 </script>
