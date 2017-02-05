@@ -27,6 +27,10 @@ body {
   .header {
     font-size: 30px;
   }
+
+  .container {
+    height: 60%;
+  }
 }
 
 .container {
