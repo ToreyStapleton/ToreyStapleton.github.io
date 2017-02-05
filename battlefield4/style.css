@@ -18,6 +18,24 @@ html {
   color: #b4da55;
 }
 
+.footer {
+  height: 10%;
+  position: fixed;
+  color: white;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.label {
+  padding-bottom: 50px;
+}
+
+.footer a {
+  style: none;
+  color: #b4da55;
+}
+
 img {
   height: 20px;
 }
@@ -32,6 +50,10 @@ img {
 
 
 @media (max-width: 500px) {
+  .platform {
+    display: inline-block;
+  }
+
   .icon {
     display: inline;
   }
@@ -50,6 +72,11 @@ img {
 }
 
 @media (max-width: 750px) {
+  .platform {
+    display: inline-block;
+    height: 60px;
+  }
+
   .header {
     font-size: 30px;
   }
@@ -103,23 +130,5 @@ img {
     flex-direction: column;
     color: white;
     text-align: center;
-  }
-
-  .footer {
-    height: 10%;
-    position: fixed;
-    color: white;
-    bottom: 0;
-    right: 0;
-    padding: 20px;
-  }
-
-  .label {
-    padding-bottom: 50px;
-  }
-
-  .footer a {
-    style: none;
-    color: #b4da55;
   }
 }
