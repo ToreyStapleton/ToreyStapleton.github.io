@@ -35,7 +35,6 @@ function xmlData() {
   oReq = new XMLHttpRequest();
   oReq.onreadystatechange = logContents;
   oReq.open('GET', endpoint);
-  oReq.responseType = "text"
   oReq.send();
 };
 
