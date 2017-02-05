@@ -19,10 +19,26 @@ img {
   height: 20px;
 }
 
+.icon {
+  display: none;
+}
+
+.person {
+  display: inline;
+}
+
+.peak {
+  display: inline;
+}
+
+.peakM {
+  display: none;
+}
+
 @media (max-width: 500px) {
+
   .header {
     color: #b4da55;
-    margin: auto;
     font-size: 30px;
     text-align: center;
   }
@@ -32,6 +48,7 @@ img {
     position: absolute;
     height: 75%;
     display: block;
+    padding: 0 0 0 20px;
   }
 
   .platform {
@@ -39,6 +56,10 @@ img {
     height: 60px;
     font-size: calc(15px + 8 * ((100vw - 320px) / 1180));
     height: 20%;
+  }
+
+  .platform div {
+    line-height: 100px;
   }
 
   .icon {
@@ -126,6 +147,6 @@ img {
     flex-direction: column;
     color: white;
     text-align: center;
-    font-size: 40px;
+    font-size: calc(15px + 8 * ((100vw - 320px) / 1180));
   }
 }
