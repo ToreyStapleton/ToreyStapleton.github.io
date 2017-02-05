@@ -17,6 +17,7 @@ body {
 
 img {
   height: 20px;
+  /*top: 20px;*/
 }
 
 .icon {
@@ -33,6 +34,10 @@ img {
 
 .peakM {
   display: none;
+}
+
+.platform:nth-child(odd) {
+  background-color: #323232;
 }
 
 .footer {
@@ -63,7 +68,6 @@ img {
     position: absolute;
     height: 75%;
     display: block;
-    padding: 0 0 0 20px;
   }
 
   .platform {
@@ -75,6 +79,10 @@ img {
 
   .platform div {
     line-height: 100px;
+  }
+
+  .label {
+    padding-left: 20px;
   }
 
   .icon {
