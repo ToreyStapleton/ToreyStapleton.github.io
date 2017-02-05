@@ -22,7 +22,34 @@ img {
   height: 20px;
 }
 
+.peakM {
+  display: none;
+}
+
+.icon {
+  display: none;
+}
+
+
 @media (max-width: 500px) {
+  .icon {
+    display: inline;
+  }
+
+  .person {
+    display: none;
+  }
+
+  .peak {
+    display: none;
+  }
+
+  .peakM {
+    display: inline;
+  }
+}
+
+@media (max-width: 750px) {
   .header {
     font-size: 30px;
   }
@@ -51,16 +78,16 @@ img {
 
   .count {
     float: left;
-    width: 50%;
+    width: 40%;
   }
 
   .peak24 {
     float: left;
-    width: 30%;
+    width: 40%;
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 751px) {
   .container {
     height: 80%;
     display: flex;
