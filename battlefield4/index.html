@@ -19,6 +19,10 @@ window.onload = function () {
   xmlData();
 };
 
+window.onresize = function () {
+  checkSize();
+}
+
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
 const onlinePlayers = [];
 
@@ -54,17 +58,29 @@ function getPlatformInfo() {
 };
 
 var container = document.querySelector('.container');
+var person = document.querySelector('.person');
 
 function showPlatform(count, label, peak24) {
   var line = document.createElement('div');
   line.setAttribute('class', 'platform');
   line.innerHTML = `
   <div class="label">${label}</div>
-  <div class="count">Players Online: ${count}</div>
-  <div class="peak24">Peak over last 24 hours: ${peak24}</div>
+  <div class="count"><span class="person">Players Online: </span>${count}</div>
+  <div class="peak24">24 hour peak: ${peak24}</div>
   `;
   container.appendChild(line);
+  return checkSize();
 }
+
+function checkSize() {
+  var person = document.querySelector('.person');
+  if(window.innerWidth < 500 && person.childElementCount == 0) {
+    person.innerHTML = "<img src='person.png'>";
+  }
+  else if(window.innerWidth > 500 && person.childElementCount > 0) {
+    person.innerHTML = "Players Online: ";
+  }
+};
 
 </script>
   </body>

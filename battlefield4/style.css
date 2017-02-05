@@ -4,7 +4,6 @@ html {
   font-family:'helvetica neue';
   font-size: 20px;
   font-weight: 200;
-  height: 100%;
   width: 100%;
   position: fixed;
   overflow: hidden;
@@ -13,38 +12,55 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  height: 100%;
-}
-
 .header {
   text-align: center;
   margin-bottom: 0px;
   color: #b4da55;
 }
 
-@media (max-width: 500px) {
+img {
+  height: 20px;
+}
+
+@media (min-width: 500px) {
   .header {
     font-size: 30px;
   }
 
+  img {
+    height: 20px;
+  }
+
   .container {
-    height: 60%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .platform {
+    padding: 10px 0 10px 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+
+  .label {
+    float: left;
+    width: 20%;
+  }
+
+  .count {
+    float: left;
+    width: 50%;
+  }
+
+  .peak24 {
+    float: left;
+    width: 30%;
   }
 }
 
-.container {
+/*.container {
   height: 80%;
-  display: flex;
-  overflow: hidden;
-}
-
-.first {
-  display: flex;
-  overflow: hidden;
-}
-
-.second {
   display: flex;
   overflow: hidden;
 }
@@ -76,4 +92,4 @@ body {
 .footer a {
   style: none;
   color: #b4da55;
-}
+}*/
