@@ -43,13 +43,14 @@ img {
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   padding-right: 10px;
   bottom: 0px;
   height: 30px;
   width: 100%;
   text-align: right;
   color: white;
+  display: inline-block;
 }
 
 .footer a {
