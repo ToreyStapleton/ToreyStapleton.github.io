@@ -22,7 +22,7 @@ img {
   height: 20px;
 }
 
-@media (min-width: 500px) {
+@media (max-width: 500px) {
   .header {
     font-size: 30px;
   }
@@ -33,6 +33,7 @@ img {
 
   .container {
     width: 100%;
+    height: ;
     overflow: hidden;
   }
 
@@ -59,37 +60,39 @@ img {
   }
 }
 
-/*.container {
-  height: 80%;
-  display: flex;
-  overflow: hidden;
-}
+@media (min-width: 500px) {
+  .container {
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+  }
 
-.platform {
-  background-size: cover;
-  background-position: center;
-  flex: 1;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  text-align: center;
-}
+  .platform {
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+  }
 
-.footer {
-  height: 10%;
-  position: fixed;
-  color: white;
-  bottom: 0;
-  right: 0;
-  padding: 20px;
-}
+  .footer {
+    height: 10%;
+    position: fixed;
+    color: white;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+  }
 
-.label {
-  padding-bottom: 50px;
-}
+  .label {
+    padding-bottom: 50px;
+  }
 
-.footer a {
-  style: none;
-  color: #b4da55;
-}*/
+  .footer a {
+    style: none;
+    color: #b4da55;
+  }
+}
