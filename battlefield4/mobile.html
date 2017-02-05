@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Battlefield 4</title>
+  <link rel="stylesheet" media="screen and (min-width: 501px)"href="style.css">
+  <link rel='stylesheet' media='screen and (max-width: 500px)' href='mobile.css' />
+
+</head>
+<body>
+  <h1 class="header">Battlefield 4 Statistics</h1>
+  <div class="container">
+    <div class="first">
+
+    </div>
+    <div class="second">
+
+    </div>
+  </div>
+  <div class="footer">
+    Data provided by <a target="blank_" href="http://bf4stats.com/">bf4stats</a>
+  </div>
+<script>
+window.onresize = function (event) {
+  if (window.innerWidth <= 500) {
+    document.location = "mobile.html";
+  }
+  else if (window.innerWidth > 500) {
+    document.location = "index.html"
+  }
+}
+
+const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
+
+const onlinePlayers = [];
+
+function getData() {
+  fetch(endpoint).then(function (data) {
+    data.json().then(function (data) {
+      onlinePlayers.push(data);
+      getPlatformInfo();
+    });
+  });
+}
+
+
+function getPlatformInfo() {
+  onlinePlayers.map(function (platform) {
+    for(var key in platform) {
+      showPlatform(platform[key].count, platform[key].label, platform[key].peak24)
+    }
+  });
+}
+
+var container = document.querySelector('.container');
+
+function showPlatform(count, label, peak24) {
+  var line = document.createElement('div');
+  line.setAttribute('class', 'platform');
+  line.innerHTML = `
+  <div class="label">${label}</div>
+  <div class="count">Players Online: ${count}</div>
+  <div class="peak24">Peak over last 24 hours: ${peak24}</div>
+  `;
+  container.appendChild(line);
+}
+
+window.onload = function () {
+  getData();
+}
+
+</script>
+  </body>
+</html>

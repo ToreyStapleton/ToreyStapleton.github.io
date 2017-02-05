@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Battlefield 4</title>
-  <link rel="stylesheet" media="screen and (min-width: 501px)"href="style.css">
-  <link rel='stylesheet' media='screen and (max-width: 500px)' href='mobile.css' />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="(min-width: 501px)"href="style.css">
+  <link rel="stylesheet" media="(max-width: 500px)" href="mobile.css" />
 </head>
 <body>
   <h1 class="header">Battlefield 4 Statistics</h1>
   <div class="container">
+    <div class="first">
 
+    </div>
+    <div class="second">
+
+    </div>
   </div>
   <div class="footer">
     Data provided by <a target="blank_" href="http://bf4stats.com/">bf4stats</a>
   </div>
 <script>
+
+window.onload = function () {
+  getData();
+};
 
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
 
@@ -28,7 +37,7 @@ function getData() {
       getPlatformInfo();
     });
   });
-}
+};
 
 
 function getPlatformInfo() {
@@ -37,9 +46,11 @@ function getPlatformInfo() {
       showPlatform(platform[key].count, platform[key].label, platform[key].peak24)
     }
   });
-}
+};
 
 var container = document.querySelector('.container');
+var first = document.querySelector('.first');
+var second = document.querySelector('.second');
 
 function showPlatform(count, label, peak24) {
   var line = document.createElement('div');
@@ -49,11 +60,12 @@ function showPlatform(count, label, peak24) {
   <div class="count">Players Online: ${count}</div>
   <div class="peak24">Peak over last 24 hours: ${peak24}</div>
   `;
-  container.appendChild(line);
-}
-
-window.onload = function () {
-  getData();
+  if(first.childElementCount >= 3) {
+    second.appendChild(line);
+  }
+  else {
+    first.appendChild(line);
+  }
 }
 
 </script>

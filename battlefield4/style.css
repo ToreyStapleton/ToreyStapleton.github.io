@@ -28,6 +28,16 @@ body {
   overflow: hidden;
 }
 
+.first {
+  display: flex;
+  overflow: hidden;
+}
+
+.second {
+  display: flex;
+  overflow: hidden;
+}
+
 .platform {
   background-size: cover;
   background-position: center;

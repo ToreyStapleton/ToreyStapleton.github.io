@@ -37,5 +37,15 @@ body {
 }
 
 .footer {
+  height: 10%;
+  position: fixed;
+  color: white;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
 
+.footer a {
+  style: none;
+  color: #b4da55;
 }
