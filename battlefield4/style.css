@@ -20,6 +20,13 @@ body {
 .header {
   text-align: center;
   margin-bottom: 0px;
+  color: #b4da55;
+}
+
+@media (max-width: 500px) {
+  .header {
+    font-size: 30px;
+  }
 }
 
 .container {
