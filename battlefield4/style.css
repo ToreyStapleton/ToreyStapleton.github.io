@@ -17,8 +17,19 @@ body {
   padding: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.platform {
+  color: white;
+}
+
 img {
   height: 20px;
+  position: relative;
+  top: 1vh;
   /*top: 20px;*/
 }
 
@@ -75,20 +86,6 @@ img {
 
 @media (max-width: 500px) {
 
-  .container {
-    width: 100%;
-    position: absolute;
-    height: 80vh;
-    display: block;
-  }
-
-  .platform {
-    display: inline-block;
-    height: 100vw;
-    font-size: calc(15px + 8 * ((100vw - 320px) / 1180));
-    height: 20%;
-  }
-
   .platform div {
     text-align: center;
     vertical-align: middle;
@@ -117,29 +114,9 @@ img {
 }
 
 @media (max-width: 750px) {
-  .platform {
-    display: inline-block;
-    height: 60px;
-    font-size: calc(15px + 8 * ((100vw - 320px) / 1180));
-    height: 20%;
-  }
 
   img {
     height: 20px;
-  }
-
-  .container {
-    width: 100%;
-    position: absolute;
-    height: 80vh;
-    display: block;
-  }
-
-  .platform {
-    padding: 10px 0 10px 0;
-    width: 100%;
-    color: white;
-    text-align: center;
   }
 
   .label {
@@ -159,21 +136,4 @@ img {
 }
 
 @media (min-width: 751px) {
-  .container {
-    height: 80%;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .platform {
-    background-size: cover;
-    background-position: center;
-    flex: 1;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    text-align: center;
-    font-size: calc(15px + 8 * ((100vw - 320px) / 1180));
-  }
 }
