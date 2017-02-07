@@ -122,9 +122,8 @@ img {
 
 .footer {
   position: absolute;
-  padding-right: 10px;
-  bottom: 0px;
-  height: 10vh;
+  right: 5px;
+  bottom: 5px;
   width: 100%;
   text-align: right;
   color: white;
