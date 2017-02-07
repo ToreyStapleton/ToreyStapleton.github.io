@@ -31,14 +31,22 @@ var oReq;
 function xmlData() {
   oReq = new XMLHttpRequest();
   oReq.onreadystatechange = logContents;
+  oReq.onerror = displayError;
   oReq.open('GET', endpoint);
   oReq.send();
 };
 
 function logContents() {
-  oReq = JSON.parse(oReq.response);
-  return getPlatformInfo();
+  if(!!oReq.response) {
+    oReq = JSON.parse(oReq.response);
+    return getPlatformInfo();
+  }
 };
+
+function displayError() {
+  console.log(oReq.target);
+
+}
 
 // function getData() {
 //   fetch(endpoint).then(function (data) {
