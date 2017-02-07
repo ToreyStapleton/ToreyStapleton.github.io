@@ -34,6 +34,15 @@ img {
   display: inline;
 }
 
+.error {
+  padding: 20px;
+}
+
+.error_msg {
+  color: white;
+  text-align: center;
+}
+
 .peakM {
   display: none;
 }

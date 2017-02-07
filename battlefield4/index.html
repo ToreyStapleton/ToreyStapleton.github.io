@@ -44,9 +44,12 @@ function logContents() {
 };
 
 function displayError() {
-  console.log(oReq.target);
-
-}
+  var line = document.createElement('div');
+  line.setAttribute('class', 'error');
+  line.innerHTML = `
+  <div class="error_msg">There was an error with the request.  Please try again later.</div>
+  `;
+  container.appendChild(line);}
 
 // function getData() {
 //   fetch(endpoint).then(function (data) {
