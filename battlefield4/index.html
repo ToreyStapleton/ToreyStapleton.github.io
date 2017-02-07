@@ -29,7 +29,8 @@ window.onresize = function () {
 
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
 const onlinePlayers = [];
-
+var container = document.querySelector('.container');
+var person = document.querySelector('.person');
 var oReq;
 
 function xmlData() {
@@ -53,27 +54,15 @@ function displayError() {
   line.innerHTML = `
   <div class="error_msg">There was an error with the request.  Please try again later.</div>
   `;
-  container.appendChild(line);}
-
-// function getData() {
-//   fetch(endpoint).then(function (data) {
-//     data.json().then(function (data) {
-//       onlinePlayers.push(data);
-//       getPlatformInfo();
-//     });
-//   });
-// };
+  container.appendChild(line);
+};
 
 
 function getPlatformInfo() {
     for(var key in oReq) {
-      // console.log(oReq[key])
       showPlatform(oReq[key].count, oReq[key].label, oReq[key].peak24)
-    }
+    };
 };
-
-var container = document.querySelector('.container');
-var person = document.querySelector('.person');
 
 function showPlatform(count, label, peak24) {
   var line = document.createElement('div');
@@ -84,33 +73,7 @@ function showPlatform(count, label, peak24) {
   <div class="peak24"><span class="peak">24 hour peak: </span><span class="peakM">24h </span>${peak24}</div>
   `;
   container.appendChild(line);
-  // return checkSize();
 }
-
-// function checkSize() {
-//   var person = document.querySelectorAll('.person');
-//   var peak = document.querySelectorAll('.peak')
-//   // if(window.innerWidth < 500) {
-//   //
-//   // }
-//   person.forEach(function (elem) {
-//     if(window.innerWidth < 500 && elem.childElementCount == 0) {
-//       elem.innerHTML = "<img src='person.png'>";
-//     }
-//     else if(window.innerWidth > 500 && elem.childElementCount > 0) {
-//       elem.innerHTML = "Players Online: ";
-//     }
-//   });
-//   peak.forEach(function (elem) {
-//     if(window.innerWidth < 500 && elem.innerHTML == '24 hour peak: ') {
-//       elem.innerHTML = "24h ";
-//     }
-//     else if(window.innerWidth > 500 && elem.innerHTML == '24h ') {
-//       elem.innerHTML = "24 hour peak: ";
-//     }
-//   });
-//   // console.clear();
-// };
 
 </script>
   </body>
