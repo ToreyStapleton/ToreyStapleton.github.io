@@ -19,11 +19,25 @@ body {
 
 .container {
   display: flex;
+  display: -webkit-flex;
+  height: 85vh;
   flex-direction: column;
 }
 
 .platform {
   color: white;
+  flex: 1 100%;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.platform div {
+  flex: 1 100%;
+  line-height: 100px;
+}
+
+.platform div:not(.label) {
+  text-align: center;
 }
 
 img {
@@ -73,30 +87,6 @@ img {
   color: white;
 }
 
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}
-
-@media all and (max-width: 600px) {
-  .navigation li:not(.title) {
-    display: none;
-  }
-
-  .navigation li {
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-  }
-
-
-  .navigation li:last-of-type {
-    border-bottom: none;
-  }
-}
-
 .error {
   padding: 20px;
 }
@@ -121,27 +111,49 @@ img {
 }
 
 .footer {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: 100%;
-  text-align: right;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  height: 5vh;
   color: white;
-  display: inline-block;
 }
 
 .footer a {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
   text-decoration: none;
   color: #b4da55;
+  cursor: pointer;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation li:not(.title) {
+    display: none;
+  }
+
+  .navigation li {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+
+  .navigation li:last-of-type {
+    border-bottom: none;
+  }
 }
 
 @media (max-width: 500px) {
-
-  .platform div {
-    text-align: center;
-    vertical-align: middle;
-    line-height: 90px;
-  }
 
   .label {
     padding-left: 20px;
@@ -166,24 +178,6 @@ img {
 
 @media (max-width: 750px) {
 
-  img {
-    height: 20px;
-  }
-
-  .label {
-    float: left;
-    width: 20%;
-  }
-
-  .count {
-    float: left;
-    width: 40%;
-  }
-
-  .peak24 {
-    float: left;
-    width: 40%;
-  }
 }
 
 @media (min-width: 751px) {
