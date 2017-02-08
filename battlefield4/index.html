@@ -71,8 +71,8 @@ function showPlatform(count, label, peak24) {
   line.setAttribute('class', 'platform');
   line.innerHTML = `
   <div class="label">${label}</div>
-  <div class="count"><img class="icon" src="person.png"><span class="person">Players Online: </span>${count}</div>
-  <div class="peak24"><span class="peak">24 hour peak: </span><span class="peakM">24h </span>${peak24}</div>
+  <div class="count"><img class="icon" src="person.png"><span class="person">Players Online</span><span class="colon">: </span> ${count}</div>
+  <div class="peak24"><span class="peak">24 hour peak</span><span class="peakM">24h</span><span class="colon">: </span> ${peak24}</div>
   `;
   container.appendChild(line);
 }
