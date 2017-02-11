@@ -84,10 +84,10 @@ img {
 
 .navigation li.about button {
   color: black;
-  font-size: 2vh;
+  font-size: 2.5vh;
   border-radius: 100px;
-  background-color: #5bc0de;
-  border-color: #5bc0de;
+  background-color: #b4da55;
+  border-color: #b4da55;
   font-weight: 800;
   text-align: center;
   vertical-align: middle;
@@ -201,15 +201,15 @@ img {
 
 .tooltip:after {
     position: absolute;
-    padding: 8px;
+    padding: 20px;
     border: 3px solid #fff;
     border-radius: 8px;
-    background-color: #1FDA9A;
-    font-size: .9em;
-    font-weight: bold;
-    color: #fff;
+    font-size: 1em;
+    font-weight: 100px;
     content: attr(data-tooltip);
-    min-width: 80px;
+    color: black;
+    background-color: white;
+    min-width: 30px;
     /* width: -moz-max-content; */
     /* width: -webkit-max-content; */
     opacity: 0;
@@ -217,7 +217,6 @@ img {
     visibility: hidden;
     z-index: 2;
 }
-
 .tooltip:hover:after {
     opacity: 1;
     visibility: visible;
@@ -225,7 +224,7 @@ img {
 
 .tooltip-left:after {
     right: 130%;
-    min-width: 100px;
+    min-width: 500px;
 }
 
 .tooltip-left:hover:after {
