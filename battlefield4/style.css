@@ -195,6 +195,43 @@ img {
   }
 }
 
+.tooltip {
+    position: relative;
+}
+
+.tooltip:after {
+    position: absolute;
+    padding: 8px;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    background-color: #1FDA9A;
+    font-size: .9em;
+    font-weight: bold;
+    color: #fff;
+    content: attr(data-tooltip);
+    min-width: 80px;
+    /* width: -moz-max-content; */
+    /* width: -webkit-max-content; */
+    opacity: 0;
+    transition: all .2s ease-in-out .25s;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.tooltip:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip-left:after {
+    right: 130%;
+    min-width: 100px;
+}
+
+.tooltip-left:hover:after {
+    right: 110%;
+}
+
 @media (max-width: 750px) {
   .navigation {
     justify-content: center;
