@@ -10,7 +10,7 @@
   <ul class="navigation">
     <li class="brand"><a href="/">TS</a></li>
     <li class="title">Battlefield 4 Statistics</li>
-    <li class="about">?</li>
+    <li class="about"><button class="not-active" type="button" name="button">?</button></li>
   </ul>
   <div class="container">
   </div>
@@ -25,15 +25,23 @@ window.onload = function () {
   xmlData();
 };
 
-window.onresize = function () {
-  // checkSize();
-}
-
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
 const onlinePlayers = [];
 var container = document.querySelector('.container');
 var person = document.querySelector('.person');
+var button = document.querySelector('button[name="button"]');
 var oReq;
+
+button.addEventListener("click", toggleModal);
+
+function toggleModal() {
+  if(~this.className.indexOf('not-active') != 0) {
+    this.className = "active";
+  }
+  else {
+    this.className = "not-active";
+  }
+}
 
 function xmlData() {
   oReq = new XMLHttpRequest();
