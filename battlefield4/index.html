@@ -8,9 +8,9 @@
 </head>
 <body>
   <ul class="navigation">
-    <li class="brand"><a href="/">TS</a></li>
+    <li class="brand"><a href="#">TS</a></li>
     <li class="title">Battlefield 4 Statistics</li>
-    <li class="about"><button class="tooltip tooltip-left" data-tooltip="This project was created to practice responsive design with plain HTML, CSS, and JavaScript.  No libraries or frameworks included.  This data was simply chosen because the bf4stats endpoint allows cross domain requests without authentication." type="button" name="button">?</button></li>
+    <li class="about"><button class="tooltip tooltip-left" data-tooltip="This project was created to practice responsive design without any libraries or frameworks, only plain HTML, CSS, and JavaScript.  This data was simply chosen because the bf4stats endpoint allows cross domain requests without authentication." type="button" name="button">?</button></li>
   </ul>
   <div class="container">
   </div>
@@ -26,7 +26,6 @@ window.onload = function () {
 };
 
 const endpoint = 'http://api.bf4stats.com/api/onlinePlayers?output=json';
-const onlinePlayers = [];
 var container = document.querySelector('.container');
 var person = document.querySelector('.person');
 var oReq;
@@ -39,12 +38,46 @@ function xmlData() {
   oReq.send();
 };
 
+function updateData() {
+  oReq = new XMLHttpRequest();
+  oReq.onreadystatechange = updateContents;
+  oReq.onerror = displayError;
+  oReq.open('GET', endpoint);
+  oReq.send();
+}
+
 function logContents() {
   if(!!oReq.response) {
     oReq = JSON.parse(oReq.response);
     return getPlatformInfo();
   }
 };
+
+function updateContents() {
+  var list = document.querySelectorAll('.platform-row');
+  var card = document.querySelectorAll('.platform-card');
+  if(!!oReq.response) {
+    oReq = JSON.parse(oReq.response);
+    for(var key in oReq) {
+      for(var i=0; i<list.length; i++) {
+        if(~list[i].className.indexOf(oReq[key].label) != 0) {
+          list[i].innerHTML = `
+          <div class="label">${oReq[key].label}</div>
+          <div class="count"><img class="icon" src="person.png"><span class="person">Players Online</span><span class="colon">: </span> ${oReq[key].count}</div>
+          <div class="peak24"><span class="peak">24 hour peak</span><span class="peakM">24h</span><span class="colon">: </span> ${oReq[key].peak24}</div>
+          `
+        }
+        if(~card[i].className.indexOf(oReq[key].label) != 0) {
+          card[i].innerHTML = `
+          <div class="label">${oReq[key].label}</div>
+          <div class="count"><img class="icon" src="person.png"><span class="person">Players Online</span><span class="colon">: </span> ${oReq[key].count}</div>
+          <div class="peak24"><span class="peak">24 hour peak</span><span class="peakM">24h</span><span class="colon">: </span> ${oReq[key].peak24}</div>
+          `
+        }
+      }
+    }
+  }
+}
 
 function displayError() {
   var line = document.createElement('div');
@@ -63,15 +96,29 @@ function getPlatformInfo() {
 };
 
 function showPlatform(count, label, peak24) {
+
   var line = document.createElement('div');
-  line.setAttribute('class', 'platform');
+  var table = document.createElement('div');
+  line.setAttribute('class', 'platform-row');
+  table.setAttribute('class', 'platform-card');
+  line.className += ' ' + label;
+  table.className += ' label'
   line.innerHTML = `
   <div class="label">${label}</div>
   <div class="count"><img class="icon" src="person.png"><span class="person">Players Online</span><span class="colon">: </span> ${count}</div>
   <div class="peak24"><span class="peak">24 hour peak</span><span class="peakM">24h</span><span class="colon">: </span> ${peak24}</div>
   `;
+
+  table.innerHTML = `
+  <div class="container-card">
+  <div class="label-card">${label}</div>
+  </div>
+  `
   container.appendChild(line);
+  container.appendChild(table);
 }
+
+window.setInterval(updateData, 10000);
 
 </script>
   </body>

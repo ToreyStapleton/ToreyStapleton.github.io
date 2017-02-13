@@ -24,19 +24,20 @@ body {
   flex-direction: column;
 }
 
-.platform {
+.platform-row {
   color: white;
   flex: 1 100%;
   display: flex;
   display: -webkit-flex;
+  padding: 20px;
 }
 
-.platform div {
+.platform-row div {
   flex: 1 100%;
   line-height: 100px;
 }
 
-.platform div:not(.label) {
+.platform-row div:not(.label) {
   text-align: center;
 }
 
@@ -119,10 +120,6 @@ img {
   display: none;
 }
 
-.platform:nth-child(odd) {
-  background-color: #323232;
-}
-
 .header {
   color: #b4da55;
   font-size: 30px;
@@ -154,7 +151,7 @@ img {
   }
 }
 
-@media all and (max-width: 600px) {
+@media (max-width: 600px) {
   .navigation li:not(.title) {
     display: none;
   }
@@ -243,19 +240,54 @@ img {
   }
 }
 
+@media (max-width: 900px) {
+  .navigation li.title {
+    font-size: 20px;
+  }
+
+  .platform-card {
+    display: none;
+  }
+}
+
 @media (min-width: 900px) {
+  .navigation li.title {
+    font-size: 30px;
+  }
+
   .container {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
   }
 
-  .platform {
-    display: flex;
-    flex-direction: column;
+  .container-card {
+    border: 1px solid white;
   }
 
-  .platform div {
+  .platform-row {
+    display: none;
+  }
+
+  .platform-card {
+    width: 20%;
+    text-align: center;
+    color: black;
+    padding: 20px;
+  }
+
+  .label-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #00009c;
+    color: white;
+  }
+
+  .container-card {
+    height: 100%;
+  }
+
+  .platform-row div {
     flex: 0;
   }
 
