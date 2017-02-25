@@ -33,7 +33,7 @@ browser.get('www.google.com').then(function() {
 {% endhighlight %}
 
 
-One of the main advantages of testing Angular apps is that Protractor has the ability to synchronize with the `angular` object, allowing Protractor to know when the app is completely ready.  However, in some cases this is not always reliable, so you need some other ways to manipulate the control flow.
+One of the main advantages of testing Angular apps is that Protractor has the ability to synchronize with the `angular` object, allowing Protractor to know when the app is completely ready.  However, in some cases this is not always reliable because that only includes `$http` calls, excluding things like animations. So, you need some other ways to manipulate the control flow.
 
 
 <h3>Explicit vs Implicit Waits</h3>
