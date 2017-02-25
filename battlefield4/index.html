@@ -8,7 +8,7 @@
 </head>
 <body>
   <ul class="navigation">
-    <li class="brand"><a href="#">TS</a></li>
+    <li class="brand"><a href="../">TS</a></li>
     <li class="title">Battlefield 4 Statistics</li>
     <li class="about"><button class="tooltip tooltip-left" data-tooltip="This project was created to practice responsive design without any libraries or frameworks, only plain HTML, CSS, and JavaScript.  This data was simply chosen because the bf4stats endpoint allows cross domain requests without authentication." type="button" name="button">?</button></li>
   </ul>
@@ -102,7 +102,7 @@ function showPlatform(count, label, peak24) {
   line.setAttribute('class', 'platform-row');
   table.setAttribute('class', 'platform-card');
   line.className += ' ' + label;
-  table.className += ' label'
+  table.className += ' ' + label;
   line.innerHTML = `
   <div class="label">${label}</div>
   <div class="count"><img class="icon" src="person.png"><span class="person">Players Online</span><span class="colon">: </span> ${count}</div>
@@ -118,7 +118,7 @@ function showPlatform(count, label, peak24) {
   container.appendChild(table);
 }
 
-window.setInterval(updateData, 10000);
+// window.setInterval(updateData, 10000);
 
 </script>
   </body>
