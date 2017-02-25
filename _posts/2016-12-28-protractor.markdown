@@ -22,7 +22,7 @@ element(by.css('div.pageTitle')).getText().then(function(title) {
 That really executes like this:
 {% highlight javascript %}
 browser.get('www.google.com').then(function() {
-  return element(by.model('search')).sendKeys('vacation in aruba');
+  return element(by.css('input.search')).sendKeys('vacation in aruba');
 }).then(function() {
   return element(by.css('button.search')).click();
 }).then(function() {
@@ -33,7 +33,7 @@ browser.get('www.google.com').then(function() {
 {% endhighlight %}
 
 
-One of the main advantages of testing Angular apps is that Protractor has the ability to synchronize with the `angular` object, allowing Protractor to know when the app when the app is completely ready.  However, in some cases this is not always reliable, so you need some other ways to manipulate the control flow.
+One of the main advantages of testing Angular apps is that Protractor has the ability to synchronize with the `angular` object, allowing Protractor to know when the app is completely ready.  However, in some cases this is not always reliable, so you need some other ways to manipulate the control flow.
 
 
 <h3>Explicit vs Implicit Waits</h3>
