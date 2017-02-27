@@ -2,7 +2,7 @@
 layout: post
 title:  JavaScript Quirk - Sorting
 date:   2017-01-16
-abstract: Hmm
+abstract: Examining the details of JavaScripts sort function and why it sometimes leads to surprising results
 categories: javascript
 permalink: /blog/javascript-quirk-sorting
 ---
