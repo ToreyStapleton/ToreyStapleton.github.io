@@ -3,7 +3,8 @@ layout: default
 title:  "Torey Stapleton"
 permalink: /blog/index
 ---
-{% for post in site.posts %}
+{% assign sorted = (site.posts | sort: 'date') | reverse %}
+{% for post in sorted %}
 <div class="post-container">
 <div class="block">
   <h1>{{ post.title }}</h1>
