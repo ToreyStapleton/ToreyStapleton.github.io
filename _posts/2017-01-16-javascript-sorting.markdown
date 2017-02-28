@@ -22,7 +22,7 @@ numbers.sort(function(a, b) {
 });
 {% endhighlight %}
 
-That will give you numbers in ascending order.  If you want them in descending order, you can just flip the operator `<` to `>` or call `reverse()` on the returned array.  And remember, since we used the compare function as the argument, each element is treated as a **number** and not a **string**.  Handling arrays of strings will be a little different.  In Unicode, capital letters come before lower case letters.
+That will give you numbers in ascending order.  If you want them in descending order, you can just flip the operator `<` to `>` or call `reverse()` on the returned array.  And remember, since we used the compare function as the argument, each element is treated as a **number** and not a **string**.  However, handling arrays of strings will be a little different.  In Unicode, capital letters come before lower case letters.
 
 {% highlight javascript %}
 var words = ["banana", "cherry", "Orange"];
@@ -30,7 +30,7 @@ words.sort();
 ---> ["Orange", "banana", "cherry"]
 {% endhighlight %}
 
-If you want to alphabetically order, you'll use another compare function with some conditional operators.  You'll also want to either change everything to upper or lowercase for case insensitivity.
+If you want to alphabetically order words, you'll need to use another compare function with some conditional operators.  You'll also want to either change everything to upper or lowercase for case insensitivity.
 
 {% highlight javascript %}
 var words = ["banana", "cherry", "Orange"];
