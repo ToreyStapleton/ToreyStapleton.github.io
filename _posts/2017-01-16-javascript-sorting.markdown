@@ -52,4 +52,4 @@ words.sort(function (a, b) {
 
 But this is significantly slower than the three comparisons we used in our previous example.  In fact, according to [jsperf](https://jsperf.com/js-word-sorting) the `toLocale()` function is about 72% slower.  
 
-In my experience, it's very common for a coding interview to include these "gotcha" type of questions.  All they're looking for is your attention to detail how well do you really know the language.  Learning the intricacies of your language of choice and you will be much better off.
+In my experience, it's very common for a coding interview to include these "gotcha" type of questions.  All they're looking for is your attention to detail how well do you really know the language.  Learn the intricacies of your language of choice and you will be much better off.
