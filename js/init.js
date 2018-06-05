@@ -7,10 +7,10 @@
 $(document).ready(function() {
 
   var loopText = function() {
-    $(".cls1").fadeOut(1300, function() {
-      $(".cls2").fadeIn(1300, function() {
-        $(".cls2").fadeOut(1300, function() {
-          $(".cls1").fadeIn(1300, function() {
+    $(".cls1").fadeOut(1200, function() {
+      $(".cls2").fadeIn(2500, function() {
+        $(".cls2").fadeOut(1200, function() {
+          $(".cls1").fadeIn(2500, function() {
             return loopText();
           });
         });
