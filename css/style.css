@@ -732,7 +732,7 @@
 	#header
 	{
 		position: relative;
-		background-image: url('https://s20.postimg.org/b3vfdaub1/good1.jpg');
+		background-image: url('../images/headshot.JPG');
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
