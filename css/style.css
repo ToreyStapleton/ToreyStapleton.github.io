@@ -732,7 +732,7 @@
 	#header
 	{
 		position: relative;
-		background-image: url('https://s20.postimg.org/b3vfdaub1/good1.jpg');
+		background-image: url('../images/headshot.JPG');
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
@@ -774,7 +774,7 @@
 		{
 			position: relative;
 			z-index: 1;
-			margin: 0;
+			margin: 50px 0px 0px 50px;
 			padding: 4em 0 0 0;
 			text-align: left;
 			top: -10em;
@@ -998,7 +998,7 @@
 	{
 		background: #fff;
 		text-align: center;
-		padding: 4.5em 0 4.5em 0;
+		padding: 4.5em 6em 4.5em 6em;
 		margin-bottom: 0;
 	}
 
