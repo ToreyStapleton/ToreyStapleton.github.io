@@ -800,6 +800,7 @@
 		#header header > p
 		{
 			font-size: 1.25em;
+			font-weight: 500;
 			margin: 0;
 			text-align: center;
 		}
